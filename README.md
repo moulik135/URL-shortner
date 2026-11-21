@@ -2,7 +2,7 @@
 
 A secure URL shortener with click analytics, built on raw Node.js (`http`, `crypto`, `fs`) and PostgreSQL. No framework, one dependency (`pg`).
 
-**Live:** _add your Render URL here_
+**Live:** https://url-shortner-rtln.onrender.com
 
 <!-- Screenshots: add after deploying -->
 
