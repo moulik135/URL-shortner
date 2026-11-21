@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>URL Shortener</title>
+  <link rel="stylesheet" href="/style.css">
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <main>
+    <h1>URL Shortener</h1>
+
+    <form id="shorten">
+      <label for="url">Long URL</label>
+      <input id="url" name="url" type="url" required placeholder="https://example.com/a/very/long/link">
+      <div class="row">
+        <div>
+          <label for="alias">Custom alias <span class="muted">(optional)</span></label>
+          <input id="alias" name="alias" pattern="[A-Za-z0-9\-]{3,30}" placeholder="my-resume">
+        </div>
+        <div>
+          <label for="expiresAt">Expires <span class="muted">(optional)</span></label>
+          <input id="expiresAt" name="expiresAt" type="datetime-local">
+        </div>
+      </div>
+      <button type="submit">Shorten</button>
+    </form>
+
+    <p id="message" role="status" aria-live="polite"></p>
+
+    <h2>Your links</h2>
+    <div class="table-wrap">
+      <table>
+        <thead><tr><th>Short link</th><th>Original</th><th>Clicks</th><th>Expires</th><th></th></tr></thead>
+        <tbody id="links"></tbody>
+      </table>
+    </div>
+
+    <section id="stats" hidden>
+      <h2 id="stats-title"></h2>
+      <p id="stats-total"></p>
+      <ul id="stats-days" class="bars"></ul>
+    </section>
+  </main>
+</body>
+</html>
